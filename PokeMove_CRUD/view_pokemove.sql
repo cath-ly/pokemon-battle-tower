@@ -1,0 +1,1 @@
+-- view of pokemon move? innerjoin what exactly?
