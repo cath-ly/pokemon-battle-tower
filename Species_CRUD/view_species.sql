@@ -1,1 +1,3 @@
 -- view for species...
+CREATE VIEW spec AS
+    SELECT * FROM species;
