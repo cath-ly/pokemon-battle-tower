@@ -1,4 +1,4 @@
 CREATE TABLE species(
     PRIMARY KEY (species_name),
-    species_name    VARCHAR(30)
+    species_name    VARCHAR(11)
 );
