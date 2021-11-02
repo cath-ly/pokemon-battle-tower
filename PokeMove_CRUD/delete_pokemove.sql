@@ -1,2 +1,3 @@
 -- deleting values from the field
--- DELETE FROM poke_move WHERE poke_id = ...;
+-- DELETE FROM poke_move 
+--    WHERE poke_id = ...;
