@@ -1,2 +1,2 @@
-INSERT INTO Pokemon
+INSERT INTO pokemon
 VALUES (...);

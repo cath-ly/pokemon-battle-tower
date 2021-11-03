@@ -1,2 +1,2 @@
-DELETE FROM Trainers_Pokemon WHERE TrainerID = ??? AND PokemonID = ???;
+DELETE FROM Trainers_Pokemon WHERE trainer_id = ??? AND poke_id = ???;
 

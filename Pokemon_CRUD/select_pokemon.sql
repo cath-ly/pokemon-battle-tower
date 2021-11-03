@@ -1,2 +1,2 @@
-SELECT * FROM Pokemon;
+SELECT * FROM pokemon;
 

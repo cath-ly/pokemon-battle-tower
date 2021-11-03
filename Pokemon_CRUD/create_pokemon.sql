@@ -1,9 +1,9 @@
-CREATE TABLE Pokemon (
-    PRIMARY KEY PokemonID INT AUTO_INCREMENT,
-    Pokemon_Name VARCHAR(20),
-    Pokemon_Trait VARCHAR(20),
-    Pokemon_Found VARCHAR(20),
-    FOREIGN KEY Pokemon_Species REFERENCES Species(Species_Name),
-    Mega BOOLEAN (5),
-    Pokemon_Level INT(3)  
+CREATE TABLE pokemon (
+    PRIMARY KEY poke_id INT AUTO_INCREMENT,
+    poke_name VARCHAR(20),
+    poke_trait VARCHAR(20),
+    poke_found VARCHAR(20),
+    FOREIGN KEY poke_species REFERENCES species(species_name),
+    mega BOOLEAN (5),
+    poke_level INT(3)  
 );

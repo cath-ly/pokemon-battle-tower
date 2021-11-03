@@ -1,2 +1,2 @@
-DELETE FROM Pokemon WHERE PokemonID = ???;
+DELETE FROM pokemon WHERE poke_id = ???;
 

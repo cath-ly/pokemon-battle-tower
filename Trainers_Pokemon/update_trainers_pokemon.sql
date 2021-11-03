@@ -1,3 +1,3 @@
 UPDATE Trainers_Pokemon
-SET PokemonID = newPokemonID?
-WHERE TrainerID = ???;
+SET poke_id = newpoke_id?
+WHERE trainer_id = ???;

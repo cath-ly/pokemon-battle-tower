@@ -1,3 +1,3 @@
-UPDATE Pokemon
-SET Pokemon_Level = Pokemon_Level + 1
-WHERE PokemonID = <insert value>;
+UPDATE pokemon
+SET poke_level = poke_level + 1
+WHERE poke_id = <insert value>;
