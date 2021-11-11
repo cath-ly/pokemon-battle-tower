@@ -1,4 +1,4 @@
-SOURCE create_typedisad.sql;
-SOURCE add_typedisad.sql;
-SOURCE select_typedisad.sql;
-SOURCE view_typedisad.sql;
+SOURCE typedisad_CRUD/create_typedisad.sql;
+SOURCE typedisad_CRUD/add_typedisad.sql;
+SOURCE typedisad_CRUD/select_typedisad.sql;
+SOURCE typedisad_CRUD/view_typedisad.sql;

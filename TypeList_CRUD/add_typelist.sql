@@ -1,2 +1,2 @@
-INSERT INTO typelist(type_id, type_name)
+INSERT INTO typelist(type_name)
 VALUES ();
