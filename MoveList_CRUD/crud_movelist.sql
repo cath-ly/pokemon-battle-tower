@@ -1,4 +1,4 @@
-SOURCE create_movelist.sql;
-SOURCE add_movelist.sql;
-SOURCE select_movelist.sql;
-SOURCE view_movelist.sql;
+SOURCE MoveList_CRUD/create_movelist.sql;
+SOURCE MoveList_CRUD/add_movelist.sql;
+SOURCE MoveList_CRUD/select_movelist.sql;
+SOURCE MoveList_CRUD/view_movelist.sql;
