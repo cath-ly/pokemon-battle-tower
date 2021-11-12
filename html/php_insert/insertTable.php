@@ -2,6 +2,7 @@
 
 
 <?php 
+/*
 // start of insert _ table
 //will show error if not cooperating
 ini_set('display_errors', 1);
@@ -26,7 +27,7 @@ if(array_key_exists('table', $_POST)){
     //have to create session? and then alter data for specific unit?
     //authorization?
 
-    /*
+    
     $config = parse_ini_file('/home/Takrak/mysql.ini');
     $dbname = 'instrument_rentals';
     $conn = new mysqli(
@@ -43,9 +44,10 @@ if(array_key_exists('table', $_POST)){
     } else {
         echo "Connected Successfully!" . "<br>";
         echo "YAY!" . "<br>";
-    }*/
+    }
     header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
     exit();
 }
 //method is get, prepare statement, bind, and execute
+*/
 ?>

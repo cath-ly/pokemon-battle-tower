@@ -1,4 +1,5 @@
 <?php
+/* disregard generic table
     ///require 'format_result.php';
     // Show ALL PHP's errors.
     ini_set('display_errors', 1);
@@ -63,3 +64,5 @@
     </select>
     <input type="submit" value="Submit">
 </form>
+*/
+?>
