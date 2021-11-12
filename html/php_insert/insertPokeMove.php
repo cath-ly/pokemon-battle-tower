@@ -23,23 +23,27 @@
         exit;
     }
     //pokemove insertion statement
-    $ins_stmt = $conn->prepare("INSERT INTO donks (duck_name)
-                                VALUES (?);"); 
-    $ins_stmt->bind_param('s', $name);
+    $ins_stmt = $conn->prepare("INSERT INTO donks (duck_name, duck_trait)
+                                VALUES ((?), (?));"); 
+    $ins_stmt->bind_param('ss', $name, $trait);
     ?>
 
     <p>Enter the Fields to Insert into Pokemon's Move:
         <!-- Using default action (this page). -->
         <form method=POST>
             <input type=text name=name placeholder='Enter name...'/>
-            <input type=submit value='Submit'/>
+            <input type=text name=trait placeholder='Enter trait...'/>
+            <input type=submit name=submit value='Submit'/>
         </form>
     </p>
 
 <?php
-    if(array_key_exists('name', $_POST)){
+    if(array_key_exists('submit', $_POST)){
             $name = $_POST['name'];  // assign to set new values
-            $ins_stmt->execute();
+            $trait = $_POST['trait'];
+            if(($name != '') && ($trait != '')){
+                $ins_stmt->execute();
+            }
             header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
             exit();
     }
