@@ -1,5 +1,5 @@
 -- selecting table
-SELECT species_name 
+SELECT species_name, type_id
 FROM species_type
         INNER JOIN species
-            USING (type_id);
+            USING (species_name);

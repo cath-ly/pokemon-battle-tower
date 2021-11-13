@@ -1,2 +1,9 @@
 INSERT INTO typelist(type_name)
-VALUES ();
+VALUES ('Normal'),
+       ('Fire'),
+       ('Water'),
+       ('Grass'),
+       ('Electric'),
+       ('Ice'),
+       ('Fighting'),
+       ('...');

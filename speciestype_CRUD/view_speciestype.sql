@@ -3,4 +3,4 @@ CREATE VIEW spec_type AS
     SELECT species_name 
     FROM species_type
         INNER JOIN species
-            USING (type_id);
+            USING (species_name);
