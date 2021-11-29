@@ -1,2 +1,2 @@
-SELECT * FROM Trainers_Pokemon;
+SELECT * FROM trainers_pokemon;
 
