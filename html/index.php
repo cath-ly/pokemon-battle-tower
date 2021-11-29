@@ -12,12 +12,12 @@
             Welcome to Battle Tower!
         </h1>
 
-        <img src="../Images/pokemon.jpg" alt="Pokemon" style="width:50%">
+        <img src="https://images.unsplash.com/photo-1601430854328-26d0d524344a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Pokemon" style="width:50%" alt="Pokemon" style="width:50%">
 
         <h2>Menu</h2>
 
         <h3>
-            Log in Log in muhammad is goated
+            Log in Log in
         </h3>
         
         <form action="index.php" method=POST>
