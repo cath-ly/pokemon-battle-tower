@@ -55,6 +55,8 @@
         <ul style="font-size: 1.875em">
             <li><a class="active" href="#home">Pokemon</a></li>
             <li><a href="#news">Trainers</a></li>
+            <a href="insert.html">Insertion Tables</a>
+            <a href="delete.html">Deletion Tables</a>
         </ul>
 
         <h1>
