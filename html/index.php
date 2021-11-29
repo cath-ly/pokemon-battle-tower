@@ -21,8 +21,6 @@
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-                overflow: hidden;
-                text-align:center; 
                 text-decoration: none;
             }
 
@@ -50,13 +48,13 @@
     
     <body>
 
-            <br>
+        <br>
 
         <ul style="font-size: 1.875em">
             <li><a class="active" href="#home">Pokemon</a></li>
             <li><a href="#news">Trainers</a></li>
-            <a href="insert.html">Insertion Tables</a>
-            <a href="delete.html">Deletion Tables</a>
+            <li><a href="insert.html">Insertion Tables</a></li>
+            <li><a href="delete.html">Deletion Tables</a></li>
         </ul>
 
         <h1>
@@ -105,6 +103,17 @@
             echo "Connected Successfully!" . "<br>"; 
             echo "Congratulations!" . "<br>"; 
         }
+
+        if (empty($_SESSION['username']))
+        {
+
+        }
+
+        if (!empty($_SESSION['username']))
+        {
+            
+        }
+
 
         // /* ----- INSERTION HANDLING ----- */
         // // Add some data into the database, if requested.
