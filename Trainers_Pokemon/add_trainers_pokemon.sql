@@ -1,2 +1,2 @@
-INSERT INTO Trainers_Pokemon
+INSERT INTO trainers_pokemon
 VALUES (...);
