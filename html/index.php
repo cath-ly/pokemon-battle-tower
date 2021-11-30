@@ -107,7 +107,7 @@
         if (!empty($_SESSION['username']))
         {
             $time_lapsed = $current_time-$_SESSION['start_time'];
-            if($time_lapsed>10)
+            if($time_lapsed > 1800)
             {
                 session_unset();
                 header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
