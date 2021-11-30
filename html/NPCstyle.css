@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+    font-family: Helvetica;
+    background-color: lightblue;
+}
+
+ul { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+    color: blue;
+    text-decoration:none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: blue;
+    font-size: 3em;
+}
+
+.nav {
+    text-align: center;
+    font-size: 100px;
+}

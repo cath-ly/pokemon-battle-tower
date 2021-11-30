@@ -1,3 +1,6 @@
+<head>
+        <link rel="stylesheet" href="/home/jeligooch/csc362-proj-npc/html/NPCstyle.css" type="text/css">
+</head>
 <?php
     ///require 'format_result.php';
     // Show ALL PHP's errors.
