@@ -123,16 +123,6 @@
                 echo $time_lapsed;
                 echo htmlspecialchars($_SESSION['username']);?> 
             </p> <?php
-<<<<<<< HEAD
-=======
-            
-        }
-
-        //this is always going to be false, accidental?
-        if($needs_reload){
-            header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
-            exit();
->>>>>>> 4dd4848beb4c8d35398ade2b167d3f7231552c28
         }
 
     ?>
