@@ -92,35 +92,10 @@
         }
 
 
-        // /* ----- INSERTION HANDLING ----- */
-        // // Add some data into the database, if requested.
-        // if(array_key_exists('add_records', $_POST)){
-        //     $ins_qry = file_get_contents('add_instruments.sql');
-        //     $reload = true;
-        //     $conn->query($ins_qry);
-        // }
-        
-        // /* ----- SELECTION ----- */
-
-        // /* ----- DELETION HANDLING ----- */
-        // $del_str = file_get_contents('delete_instruments.sql');
-        // $del_stmt = $conn->prepare($del_str);
-
-        // echo($del_stmt);
-        // if($del_stmt) {
-        //     $del_stmt->bind_param('i', $id);
-        // }
-
-        // if (array_key_exists("delbtn", $_POST)){
-            
-        // }
-        // /* ----- END DELETION HANDLING ----- */
-
-        // /* ----- REDIRECT CLIENT ----- */
-        // if($needs_reload){
-        //     header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
-        //         exit();
-        // }
+        if($needs_reload){
+            header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+                exit();
+        }
 
     ?>
 
