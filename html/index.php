@@ -91,10 +91,10 @@
             
         }
 
-
+        //this is always going to be false, accidental?
         if($needs_reload){
             header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
-                exit();
+            exit();
         }
 
     ?>
