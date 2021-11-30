@@ -31,7 +31,7 @@
 
     $rows = $result->fetch_all();
     $spec_row = $result->num_rows;
-
+    ?>
     <form action="viewLeaderboard.php" method=POST>
     <p>
         <table>
@@ -44,11 +44,8 @@
             </tr>
             </thead>
         </table>
-        <input type 
         </form>
     </p>
-    <?php }
-?>
 
 
 

@@ -31,7 +31,7 @@
 
     $rows = $result->fetch_all();
     $spec_row = $result->num_rows;
-
+?>
     <form action="viewTrainer_Battles.php" method=POST>
     <p>
         <table>
@@ -44,10 +44,7 @@
             </tr>
             </thead>
         </table>
-        </form>
-        
+        </form> 
     </p>
-    <?php }
-?>
 
 

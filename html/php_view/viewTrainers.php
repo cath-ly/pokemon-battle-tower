@@ -31,6 +31,7 @@
 
     $rows = $result->fetch_all();
     $spec_row = $result->num_rows;
+    ?>
 
     <form action="viewTrainers.php" method=POST>
     <p>
@@ -44,11 +45,8 @@
             </tr>
             </thead>
         </table>
-        <input type 
         </form>
     </p>
-    <?php }
-?>
 
 
 
