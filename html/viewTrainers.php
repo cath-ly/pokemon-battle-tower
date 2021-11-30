@@ -23,7 +23,7 @@
 
     //tbl view query
 
-    $query = "SELECT * FROM Trainer;";
+    $query = "SELECT * FROM trainers;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
