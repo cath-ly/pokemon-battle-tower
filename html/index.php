@@ -38,10 +38,10 @@
             Log in
         </h3>
         
-        <form action="index.php" method=POST>
-        <input type="text" name="enter name" value="Enter username" method=POST/>
-        <input type="submit" name="name" value="Log in" method=POST/>
-</form>
+        <!-- <form action="index.php" method=POST>
+            <input type="text" name="enterName" value="" method=POST/>
+            <input type="submit" name="loginButton" value="Log in" method=POST/>
+        </form> -->
 
     </body>
     
@@ -58,9 +58,24 @@
         $dbpass = 'joe';
         $database = 'pokemon'; 
 
-        $conn = new mysqli($dbhost, $dbuser, $dbpass, $database);
 
+        $current_time = microtime(true);
+        $time_lapsed = 0;
+
+        $conn = new mysqli($dbhost, $dbuser, $dbpass, $database);
         $needs_reload = false;
+
+        if (isset($_POST["loginButton"])){
+            $needs_reload = true;
+            $_SESSION['start_time'] = microtime(true);
+            $_SESSION['username'] = htmlspecialchars($_POST['enterName']);
+        }
+        
+
+        if (isset($_POST["logoutButton"])){
+            session_unset();
+            $needs_reload = true;
+        }
 
         if ($conn->connect_errno) {
             echo "Error: Failed to make a MySQL connection, 
@@ -73,28 +88,41 @@
             echo "Congratulations!" . "<br>"; 
         }
 
+        if($needs_reload){
+            header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+            exit();
+        }
+
         if (empty($_SESSION['username']))
         {
-            echo "Failure";
-            echo $_SESSION['username'];
+            echo "Empty username";
+            ?>
+            <form action="index.php" method=POST>
+                <input type="text" name="enterName" value="" method=POST/>
+                <input type="submit" name="loginButton" value="Log in" method=POST/>
+            </form>
+            <?php
         }
 
         if (!empty($_SESSION['username']))
         {
-            $time_lapsed = $_SESSION['start_time'] - $current_time;
+            $time_lapsed = $current_time-$_SESSION['start_time'];
+            if($time_lapsed>10)
+            {
+                session_unset();
+                header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+                exit();
+            }
             ?> 
             <p>
+            <form action="index.php" method=POST>
+                <input type="submit" name="logoutButton" value="Log Out" method=POST/>
+            </form>
             <?php
                 echo "Welcome ";
+                echo $time_lapsed;
                 echo htmlspecialchars($_SESSION['username']);?> 
             </p> <?php
-            
-        }
-
-
-        if($needs_reload){
-            header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
-                exit();
         }
 
     ?>
