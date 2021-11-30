@@ -11,38 +11,7 @@
         </title>
         <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1542779283-429940ce8336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
 
-        <style>
-            * {
-                text-align: center;
-                font-family: Helvetica;
-            }
-
-            ul { 
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                text-decoration: none;
-            }
-
-            li {
-                display: inline-block;
-                margin: 0 10px;
-                color: blue;
-                text-decoration:none;
-            }
-
-            a:visited {
-                text-decoration: none;
-                color: blue;
-                font-size: 3em;
-            }
-
-            .nav {
-                text-align: center;
-                font-size: 100px;
-            }
-
-        </style>
+        <link rel="stylesheet" href="style.css">
     
     </head>
     
@@ -51,8 +20,8 @@
         <br>
 
         <ul style="font-size: 1.875em">
-            <li><a class="active" href="#home">Pokemon</a></li>
-            <li><a href="#news">Trainers</a></li>
+            <li><a class="active" href="viewTrainersPoke.php">Pokemon</a></li>
+            <li><a href="viewTrainers.php">Trainers</a></li>
             <li><a href="insert.html">Insertion Tables</a></li>
             <li><a href="delete.html">Deletion Tables</a></li>
         </ul>
@@ -106,11 +75,19 @@
 
         if (empty($_SESSION['username']))
         {
-
+            echo "Failure";
+            echo $_SESSION['username'];
         }
 
         if (!empty($_SESSION['username']))
         {
+            $time_lapsed = $_SESSION['start_time'] - $current_time;
+            ?> 
+            <p>
+            <?php
+                echo "Welcome ";
+                echo htmlspecialchars($_SESSION['username']);?> 
+            </p> <?php
             
         }
 
