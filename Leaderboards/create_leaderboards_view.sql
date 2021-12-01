@@ -26,7 +26,7 @@ RETURN(
 );
 
 -- create view 
-CREATE VIEW [Leaderboard] AS 
+CREATE VIEW [leaderboard] AS 
 SELECT trainer_id, count_wins(trainer_id) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
 FROM trainers
 ORDER BY winstreak DESC, number_of_awards DESC;
