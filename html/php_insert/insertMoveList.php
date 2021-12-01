@@ -1,3 +1,18 @@
+<html>
+    <head>
+            <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/f/fa/Heraldic_Royal_Crown_of_Spain.svg">
+
+            <link rel="stylesheet" href="NPCstyle.css" type="text/css">
+
+            <style>
+                * {
+                    text-align: center;
+                    font-family: Helvetica;
+                    background-color: lightblue;
+                }
+
+            </style>
+</head>
 <?php
     ///require 'format_result.php';
     // Show ALL PHP's errors.
@@ -48,3 +63,5 @@
         exit();
     }
 ?>
+
+</html>
