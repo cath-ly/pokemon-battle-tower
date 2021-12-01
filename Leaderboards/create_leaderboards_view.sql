@@ -15,7 +15,7 @@ CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss TIMESTAMP)
 RETURN TYPE INT 
 RETURN(
     -- how do i stop it from counting past their most recent loss? 
-    SELECT COUNT(Winner) AS winstreak FROM trainer_battles
+    SELECT COUNT(winner) AS winstreak FROM trainer_battles
     WHERE trainer_id = trainer_1 OR trainer_id = trainer_2 AND trainer_id = Winner AND battle_date > most_recent_loss;
 );
 CALL count_wins(trainer_id, most_recent_loss);
