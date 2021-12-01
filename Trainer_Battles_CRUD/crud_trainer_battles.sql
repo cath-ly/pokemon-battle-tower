@@ -1,4 +1,4 @@
-SOURCE create_trainer_battles.sql;
-SOURCE select_trainer_battles.sql;
-SOURCE add_trainer_battles.sql;
-SOURCE update_trainer_battles.sql;
+SOURCE Trainer_Battles_CRUD/create_trainer_battles.sql;
+SOURCE Trainer_Battles_CRUD/select_trainer_battles.sql;
+SOURCE Trainer_Battles_CRUD/add_trainer_battles.sql;
+SOURCE Trainer_Battles_CRUD/update_trainer_battles.sql;
