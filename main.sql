@@ -7,9 +7,11 @@ USE battle_towers_pers;
 
 SOURCE TypeList_CRUD/crud_typelist.sql;
 SOURCE MoveList_CRUD/crud_movelist.sql;
+
+SOURCE Species_CRUD/crud_species.sql;
+
 SOURCE Pokemon_CRUD/crud_pokemon.sql;
 SOURCE PokeMove_CRUD/crud_pokemove.sql;
-SOURCE Species_CRUD/crud_species.sql;
 SOURCE speciestype_CRUD/crud_speciestype.sql;
 SOURCE Trainer_Battles_CRUD/crud_trainer_battles.sql;
 SOURCE Trainers_CRUD/crud_trainer.sql;

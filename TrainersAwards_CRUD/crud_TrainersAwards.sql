@@ -1,5 +1,5 @@
-SOURCE create_TrainersAwards.sql;
-SOURCE select_TrainersAwards.sql;
-SOURCE add_TrainersAwards.sql;
-SOURCE update_TrainersAwards.sql;
-SOURCE delete_TrainersAwards.sql;
+SOURCE TrainersAwards_CRUD/create_TrainersAwards.sql;
+SOURCE TrainersAwards_CRUD/select_TrainersAwards.sql;
+SOURCE TrainersAwards_CRUD/add_TrainersAwards.sql;
+SOURCE TrainersAwards_CRUD/update_TrainersAwards.sql;
+SOURCE TrainersAwards_CRUD/delete_TrainersAwards.sql;

@@ -1,5 +1,5 @@
-SOURCE create_pokemon.sql;
-SOURCE select_pokemon.sql;
-SOURCE add_pokemon.sql;
-SOURCE update_pokemon.sql;
-SOURCE delete_pokemon.sql;
+SOURCE Pokemon_CRUD/create_pokemon.sql;
+SOURCE Pokemon_CRUD/select_pokemon.sql;
+SOURCE Pokemon_CRUD/add_pokemon.sql;
+SOURCE Pokemon_CRUD/update_pokemon.sql;
+SOURCE Pokemon_CRUD/delete_pokemon.sql;
