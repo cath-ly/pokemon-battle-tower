@@ -1,5 +1,6 @@
 <?php
-    ///require 'format_result.php';
+    // pokemoves needs to be established
+    // require 'format_result.php';
     // Show ALL PHP's errors.
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
