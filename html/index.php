@@ -56,7 +56,7 @@
         $dbhost = 'localhost';
         $dbuser = 'webuser';
         $dbpass = 'joe';
-        $database = 'pokemon'; 
+        $database = 'battle_towers_pers'; 
 
 
         $current_time = microtime(true);
