@@ -1,2 +1,2 @@
-INSERT INTO Trainer_Battles;
+INSERT INTO trainer_battles;
 VALUES (...);
