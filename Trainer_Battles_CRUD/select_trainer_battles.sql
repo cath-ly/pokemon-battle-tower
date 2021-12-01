@@ -1,2 +1,2 @@
-SELECT * FROM Trainer_Battles;
+SELECT * FROM trainer_battles;
 
