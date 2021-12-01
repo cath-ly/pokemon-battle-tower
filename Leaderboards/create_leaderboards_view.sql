@@ -6,7 +6,7 @@ CREATE FUNCTION most_recent_loss(trainer_id INT)
 RETURNs DATE
 RETURN (
     SELECT battle_date FROM trainer_battles 
-    ON trainerID = trainer_1 OR trainer_id = trainer_2 
+    ON trainer_id = trainer_1 OR trainer_id = trainer_2 
     WHERE trainer_id != winner;
 );
 //
