@@ -1,6 +1,5 @@
 <?php
-    // pokemoves needs to be established
-    // require 'format_result.php';
+    ///require 'format_result.php';
     // Show ALL PHP's errors.
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -24,28 +23,28 @@
         exit;
     }
     //pokemove insertion statement
-    $ins_stmt = $conn->prepare("INSERT INTO poke_move (poke_id, move_name)
+    $ins_stmt = $conn->prepare("INSERT INTO awards (award_name, award_description)
                                 VALUES ((?), (?));"); 
-    $ins_stmt->bind_param('is', $id, $name);
+    $ins_stmt->bind_param('ss', $name, $desc);
     ?>
 
-    <p>Enter the Fields to Insert into Pokemon's Move:
+    <p>Enter the Fields to Insert into Pokemon Species Type:
         <!-- Using default action (this page). -->
         <form method=POST>
-            <input type=text name=id placeholder='Enter ID...'/>
-            <input type=text name=name placeholder='Enter name...'/>
+            <input type=text name=name placeholder='Enter Name...'/>
+            <input type=text name=desc placeholder='Enter Description...'/>
             <input type=submit name=submit value='Submit'/>
         </form>
     </p>
 
 <?php
     if(array_key_exists('submit', $_POST)){
-            $id = $_POST['id'];  // assign to set new values
-            $name = $_POST['name'];
-            if(($id != '') && ($name != '')){
-                $ins_stmt->execute();
-            }
-            header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
-            exit();
+        $name = $_POST['name'];  // assign to set new values
+        $desc = $_POST['desc'];
+        if(($name != '') && ($desc != '')){
+            $ins_stmt->execute();
+        }
+        header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+        exit();
     }
 ?>

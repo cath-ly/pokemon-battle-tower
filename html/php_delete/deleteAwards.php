@@ -23,7 +23,7 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT * FROM poke_move;";
+    $query = "SELECT * FROM awards";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -32,14 +32,13 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM poke_move WHERE poke_id = ? AND move_name = ?;"); 
-    $del_stmt->bind_param('is', $id, $name);
+    $del_stmt = $conn->prepare("DELETE FROM awards WHERE awards_name = ?;"); 
+    $del_stmt->bind_param('s', $id);
     
     //checking if we deleted anything it will use header!
     $delete = false;
     for($i=0; $i<$tot_row; $i++){
         $id = $rows[$i][0];
-        $name = $rows[$i][1];
         //checks to see whether the checkbox is checked if so we will delete
         if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
             echo $conn->error;
@@ -67,7 +66,7 @@
         <?php echo $tot_col; ?> <br> -->
         <p>
         <!-- Creates a form to delete instruments -->
-        <form action="deletePokeMove.php" method=POST>
+        <form action="deleteAwards.php" method=POST>
         <table>
             <thead>
             <tr>
