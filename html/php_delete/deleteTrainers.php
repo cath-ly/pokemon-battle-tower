@@ -1,3 +1,6 @@
+<head>
+        <link rel="stylesheet" href="/home/jeligooch/csc362-proj-npc/html/NPCstyle.css" type="text/css">
+</head>
 <?php
     ///require 'format_result.php';
     // Show ALL PHP's errors.
@@ -23,7 +26,7 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT * FROM poke_move;";
+    $query = "SELECT * FROM trainers;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -32,14 +35,13 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM poke_move WHERE poke_id = ? AND move_name = ?;"); 
-    $del_stmt->bind_param('is', $id, $name);
+    $del_stmt = $conn->prepare("DELETE FROM trainers WHERE trainer_id = ?;"); 
+    $del_stmt->bind_param('i', $id);
     
     //checking if we deleted anything it will use header!
     $delete = false;
     for($i=0; $i<$tot_row; $i++){
         $id = $rows[$i][0];
-        $name = $rows[$i][1];
         //checks to see whether the checkbox is checked if so we will delete
         if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
             echo $conn->error;
@@ -67,7 +69,7 @@
         <?php echo $tot_col; ?> <br> -->
         <p>
         <!-- Creates a form to delete instruments -->
-        <form action="deletePokeMove.php" method=POST>
+        <form action="deleteTrainers.php" method=POST>
         <table>
             <thead>
             <tr>
