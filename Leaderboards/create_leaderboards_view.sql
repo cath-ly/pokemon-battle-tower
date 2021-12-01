@@ -3,7 +3,7 @@
 -- find most recent loss
 DELIMITER //
 CREATE FUNCTION most_recent_loss(trainer_id INT)
-RETURN TYPE DATE
+RETURN DATE
 RETURN(
     SELECT battle_date FROM trainer_battles 
     ON trainerID = trainer_1 OR trainer_id = trainer_2 
@@ -15,7 +15,7 @@ DELIMITER;
 DELIMITER //
 -- count wins until most recent loss
 CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss DATE)
-RETURN TYPE INT 
+RETURN INT 
 RETURN(
     -- how do i stop it from counting past their most recent loss? 
     SELECT COUNT(winner) AS winstreak FROM trainer_battles
@@ -27,7 +27,7 @@ DELIMITER;
 DELIMITER //
 -- count number of awards for a given trainer
 CREATE FUNCTION count_awards(trainer_id) 
-RETURN TYPE INT
+RETURN INT
 RETURN(
     SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards;
 );
