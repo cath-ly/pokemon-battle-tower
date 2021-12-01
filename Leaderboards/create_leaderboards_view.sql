@@ -2,7 +2,7 @@
  
 -- find most recent loss
 CREATE FUNCTION most_recent_loss(trainer_id INT)
-RETURN TYPE TIMESTAMP
+RETURN TYPE DATE
 RETURN(
     SELECT battle_date FROM trainer_battles 
     ON trainerID = trainer_1 OR trainer_id = trainer_2 
