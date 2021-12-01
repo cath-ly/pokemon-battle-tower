@@ -1,3 +1,6 @@
+<head>
+        <link rel="stylesheet" href="/home/jeligooch/csc362-proj-npc/html/NPCstyle.css" type="text/css">
+</head>
 <?php
     ///require 'format_result.php';
     // Show ALL PHP's errors.
@@ -23,10 +26,7 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT move_name, type_name 
-                FROM movelist
-                INNER JOIN typelist
-                    USING(type_id);";
+    $query = "SELECT * FROM trainers;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -35,8 +35,8 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM movelist WHERE move_name = ?;"); 
-    $del_stmt->bind_param('s', $id);
+    $del_stmt = $conn->prepare("DELETE FROM trainers WHERE trainer_id = ?;"); 
+    $del_stmt->bind_param('i', $id);
     
     //checking if we deleted anything it will use header!
     $delete = false;
@@ -69,7 +69,7 @@
         <?php echo $tot_col; ?> <br> -->
         <p>
         <!-- Creates a form to delete instruments -->
-        <form action="deleteMoveList.php" method=POST>
+        <form action="deleteTrainers.php" method=POST>
         <table>
             <thead>
             <tr>

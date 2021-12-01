@@ -23,10 +23,7 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT move_name, type_name 
-                FROM movelist
-                INNER JOIN typelist
-                    USING(type_id);";
+    $query = "SELECT * FROM trainers_pokemon;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -35,13 +32,14 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM movelist WHERE move_name = ?;"); 
-    $del_stmt->bind_param('s', $id);
+    $del_stmt = $conn->prepare("DELETE FROM trainers_pokemon WHERE trainer_id = ? AND poke_id = ?;"); 
+    $del_stmt->bind_param('ii', $tid, $pid);
     
     //checking if we deleted anything it will use header!
     $delete = false;
     for($i=0; $i<$tot_row; $i++){
-        $id = $rows[$i][0];
+        $tid = $rows[$i][0];
+        $pid = $rows[$i][1];
         //checks to see whether the checkbox is checked if so we will delete
         if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
             echo $conn->error;
@@ -69,7 +67,7 @@
         <?php echo $tot_col; ?> <br> -->
         <p>
         <!-- Creates a form to delete instruments -->
-        <form action="deleteMoveList.php" method=POST>
+        <form action="deleteTPK.php" method=POST>
         <table>
             <thead>
             <tr>

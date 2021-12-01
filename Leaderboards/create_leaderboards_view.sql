@@ -1,32 +1,37 @@
 -- Leaderboard creation script
  
 -- find most recent loss
-CREATE FUNCTION most_recent_loss(TrainerID INT)
-RETURN TYPE TIMESTAMP
+CREATE FUNCTION most_recent_loss(trainer_id INT)
+RETURN TYPE DATE
 RETURN(
-    SELECT Battle_Date FROM Trainer_Battles 
-    ON TrainerID = Trainer_1 OR TrainerID = Trainer_2 
-    WHERE TrainerID != Winner;
+    SELECT battle_date FROM trainer_battles 
+    ON trainerID = trainer_1 OR trainer_id = trainer_2 
+    WHERE trainer_id != winner;
 );
+CALL most_recent_loss(trainer_id);
 
 -- count wins until most recent loss
-CREATE FUNCTION count_wins(TrainerID INT, most_recent_loss TIMESTAMP)
+CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss TIMESTAMP)
 RETURN TYPE INT 
 RETURN(
     -- how do i stop it from counting past their most recent loss? 
-    SELECT COUNT(Winner) AS Winstreak FROM Trainer_Battles
-    WHERE TrainerID = Trainer_1 OR TrainerID = Trainer_2 AND TrainerID = Winner AND Battle_Date > most_recent_loss;
+    SELECT COUNT(Winner) AS winstreak FROM trainer_battles
+    WHERE trainer_id = trainer_1 OR trainer_id = trainer_2 AND trainer_id = Winner AND battle_date > most_recent_loss;
 );
+CALL count_wins(trainer_id, most_recent_loss);
 
 -- count number of awards for a given trainer
-CREATE FUNCTION count_awards(TrainerID) 
+CREATE FUNCTION count_awards(trainer_id) 
 RETURN TYPE INT
 RETURN(
-    SELECT count(TrainerID) AS Number_of_Awards FROM TrainerAwards;
+    SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards;
 );
+CALL count_awards(trainer_id);
 
--- create view 
-CREATE VIEW [Leaderboard] AS 
-SELECT TrainerID, count_wins(TrainerID) AS Winstreak, count_awards(TrainerID) AS Number_of_Awards--calc ranking in php
-FROM Trainers
-ORDER BY Winstreak DESC, Number_of_Awards DESC;
+-- create view/do i add this into the query for the viewLeaderboards.php?
+CREATE VIEW [leaderboard] AS 
+SELECT trainer_id, count_wins(trainer_id) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
+FROM trainers
+ORDER BY winstreak DESC, number_of_awards DESC;
+
+SELECT * FROM leaderboard;

@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
 
     /*need to connect to DB*/ 
-    $config = parse_ini_file('/home/nalicea4242/mysqli.ini');
+    $config = parse_ini_file('/home/Takrak/mysqli.ini');
     $dbname = 'temp';
 
     /*config shit*/
@@ -23,7 +23,7 @@
 
     //tbl view query
 
-    $query = "SELECT * FROM Leaderboard;";
+    $query = "SELECT * FROM leaderboard;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";

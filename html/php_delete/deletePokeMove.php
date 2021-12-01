@@ -8,7 +8,7 @@
     // Connect to DB
     $config = parse_ini_file('/home/Takrak/mysql.ini');
     // whatever our pokemon name is BattleTowers
-    $dbname = 'red_river_climbs';
+    $dbname = 'battle_towers_pers';
 
     $conn = new mysqli(
             $config['mysqli.default_host'],
@@ -23,7 +23,7 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT * FROM donks;";
+    $query = "SELECT * FROM poke_move;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -32,7 +32,7 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM donks WHERE donks_id = ? AND duck_name = ?;"); 
+    $del_stmt = $conn->prepare("DELETE FROM poke_move WHERE poke_id = ? AND move_name = ?;"); 
     $del_stmt->bind_param('is', $id, $name);
     
     //checking if we deleted anything it will use header!

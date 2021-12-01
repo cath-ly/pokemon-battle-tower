@@ -24,25 +24,25 @@
         exit;
     }
     //pokemove insertion statement
-    $ins_stmt = $conn->prepare("INSERT INTO poke_move (poke_id, move_name)
+    $ins_stmt = $conn->prepare("INSERT INTO trainers_award (trainer_id, award_name)
                                 VALUES ((?), (?));"); 
-    $ins_stmt->bind_param('is', $id, $name);
+    $ins_stmt->bind_param('is', $tid, $name);
     ?>
 
     <p>Enter the Fields to Insert into Pokemon's Move:
         <!-- Using default action (this page). -->
         <form method=POST>
-            <input type=text name=id placeholder='Enter ID...'/>
-            <input type=text name=name placeholder='Enter name...'/>
+            <input type=text name=tid placeholder='Enter Trainer ID...'/>
+            <input type=text name=name placeholder='Enter Award Name...'/>
             <input type=submit name=submit value='Submit'/>
         </form>
     </p>
 
 <?php
     if(array_key_exists('submit', $_POST)){
-            $id = $_POST['id'];  // assign to set new values
+            $tid = $_POST['tid'];  // assign to set new values
             $name = $_POST['name'];
-            if(($id != '') && ($name != '')){
+            if((isset($tid)) && ($name = '')){
                 $ins_stmt->execute();
             }
             header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
