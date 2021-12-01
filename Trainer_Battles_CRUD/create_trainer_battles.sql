@@ -6,5 +6,5 @@ CREATE TABLE trainer_battles(
     FOREIGN KEY trainer_1 REFERENCES trainers(trainer_name),
     FOREIGN KEY trainer_2 REFERENCES trainers(trainer_name), 
     FOREIGN KEY winner REFERENCES trainers(trainer_name),
-    battle_date DATE   
+    battle_date DATE;  
 );
