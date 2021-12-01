@@ -10,6 +10,7 @@ RETURN(
     WHERE trainer_id != winner;
 );
 //
+
 DELIMITER;
 DELIMITER //
 -- count wins until most recent loss
