@@ -3,7 +3,7 @@ CREATE TABLE pokemon (
     poke_name VARCHAR(20),
     poke_trait VARCHAR(20),
     poke_found VARCHAR(20),
-    mega TINYINT(1),
+    mega BOOLEAN,
     poke_level INT(3),
     PRIMARY KEY (poke_id),
     poke_species VARCHAR(11),
