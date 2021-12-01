@@ -1,5 +1,5 @@
 SELECT award_name
-FROM Awards
-INNER JOIN TrainerAwards
+FROM awards
+INNER JOIN trainer_awards
 USING(award_name);
 
