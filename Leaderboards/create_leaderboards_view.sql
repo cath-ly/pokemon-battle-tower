@@ -11,8 +11,6 @@ RETURN(
 );
 //
 
-DELIMITER;
-DELIMITER //
 -- count wins until most recent loss
 CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss DATE)
 RETURN INT 
@@ -23,8 +21,6 @@ RETURN(
 );
 //
 
-DELIMITER;
-DELIMITER //
 -- count number of awards for a given trainer
 CREATE FUNCTION count_awards(trainer_id) 
 RETURN INT
@@ -32,7 +28,7 @@ RETURN(
     SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards;
 );
 //
-DELIMITER;
+
 
 CALL most_recent_loss(trainer_id);
 CALL count_wins(trainer_id, most_recent_loss);
