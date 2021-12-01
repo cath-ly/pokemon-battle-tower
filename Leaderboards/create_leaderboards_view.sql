@@ -1,7 +1,7 @@
 -- Leaderboard creation script
  
 -- find most recent loss
-DELIMITTER //
+DELIMITER //
 CREATE FUNCTION most_recent_loss(trainer_id INT)
 RETURN TYPE DATE
 RETURN(
@@ -10,9 +10,10 @@ RETURN(
     WHERE trainer_id != winner;
 );
 //
-
+DELIMITER;
+DELIMITER //
 -- count wins until most recent loss
-CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss TIMESTAMP)
+CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss DATE)
 RETURN TYPE INT 
 RETURN(
     -- how do i stop it from counting past their most recent loss? 
@@ -21,6 +22,8 @@ RETURN(
 );
 //
 
+DELIMITER;
+DELIMITER //
 -- count number of awards for a given trainer
 CREATE FUNCTION count_awards(trainer_id) 
 RETURN TYPE INT
@@ -28,6 +31,7 @@ RETURN(
     SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards;
 );
 //
+DELIMITER;
 
 CALL most_recent_loss(trainer_id);
 CALL count_wins(trainer_id, most_recent_loss);
