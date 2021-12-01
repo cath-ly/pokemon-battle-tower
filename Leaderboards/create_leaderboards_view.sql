@@ -1,7 +1,6 @@
 -- Leaderboard creation script
  
--- calculate winstreak
---write function finding most recent loss, and another function with the input of their most recent loss and counting the wins since then. 
+-- find most recent loss
 CREATE FUNCTION most_recent_loss(TrainerID INT)
 RETURN TYPE TIMESTAMP
 RETURN(
@@ -10,6 +9,7 @@ RETURN(
     WHERE TrainerID != Winner;
 );
 
+-- count wins until most recent loss
 CREATE FUNCTION count_wins(TrainerID INT, most_recent_loss TIMESTAMP)
 RETURN TYPE INT 
 RETURN(
@@ -18,16 +18,15 @@ RETURN(
     WHERE TrainerID = Trainer_1 OR TrainerID = Trainer_2 AND TrainerID = Winner AND Battle_Date > most_recent_loss;
 );
 
--- calculate ranking 
-CREATE FUNCTION calc_ranking(count_wins INT)
---use count wins function to find any ties, 
---then count the amount of awards they have 
-    --how do i compare outputs of a function without 
-    --inputting all of the trainerids?
+-- count number of awards for a given trainer
+CREATE FUNCTION count_awards(TrainerID) 
+RETURN TYPE INT
+RETURN(
+    SELECT count(TrainerID) AS Number_of_Awards FROM TrainerAwards;
+);
 
 -- create view 
 CREATE VIEW [Leaderboard] AS 
-SELECT TrainerID, count_wins
+SELECT TrainerID, count_wins(TrainerID) AS Winstreak, count_awards(TrainerID) AS Number_of_Awards--calc ranking in php
 FROM Trainers
-WHERE ...
-ORDER BY count_wins DESC;
+ORDER BY Winstreak DESC, Number_of_Awards DESC;
