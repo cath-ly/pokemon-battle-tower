@@ -120,7 +120,7 @@
             </form>
             <?php
                 echo "Welcome ";
-                echo $time_lapsed;
+                echo $time_lapsed . "<br>";
                 echo htmlspecialchars($_SESSION['username']);?> 
             </p> <?php
         }
