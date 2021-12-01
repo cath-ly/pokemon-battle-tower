@@ -17,4 +17,3 @@ SOURCE Trainers_POKEMON/crud_trainers_pokemon.sql;
 SOURCE TrainersAwards_CRUD/crud_TrainersAwards.sql;
 SOURCE typead_CRUD/crud_typead.sql;
 SOURCE typedisad_CRUD/crud_typedisad.sql;
-SOURCE crud_typelist.sql;
