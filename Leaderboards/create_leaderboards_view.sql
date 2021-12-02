@@ -2,6 +2,8 @@
  
 -- find most recent loss
 DELIMITER //
+DROP FUNCTION IF EXISTS (most_recent_loss);
+
 CREATE FUNCTION most_recent_loss(trainer_name VARCHAR)
 RETURNS DATE
 RETURN (
@@ -12,6 +14,8 @@ RETURN (
 //
 
 -- count wins until most recent loss
+DROP FUNCTION IF EXISTS (count_wins);
+
 CREATE FUNCTION count_wins(trainer_name VARCHAR, most_recent_loss DATE)
 RETURNS INT 
 RETURN (
@@ -22,6 +26,8 @@ RETURN (
 //
 
 -- count number of awards for a given trainer
+DROP FUNCTION IF EXISTS (count_awards);
+
 CREATE FUNCTION count_awards(trainer_id) 
 RETURNS INT
 RETURN (
@@ -30,7 +36,7 @@ RETURN (
 //
 
 -- create view/do i add this into the query for the viewLeaderboards.php?
-CREATE VIEW [leaderboard] AS 
+CREATE VIEW leaderboard AS 
 SELECT trainer_name, count_wins(trainer_name) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
 FROM trainers
 ORDER BY winstreak DESC, number_of_awards DESC;
