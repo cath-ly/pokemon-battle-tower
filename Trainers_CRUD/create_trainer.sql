@@ -1,5 +1,5 @@
-CREATE TABLE trainers(
+CREATE TABLE trainers (
+    trainer_id INT AUTO_INCREMENT,
     PRIMARY KEY (trainer_id),
-    trainer_id  INT AUTO INCREMENT,
-    trainer_name    VARCHAR(30);    
+    trainer_name VARCHAR(30)    
 );
