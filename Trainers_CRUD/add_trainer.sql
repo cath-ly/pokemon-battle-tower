@@ -1,4 +1,4 @@
-INSERT INTO trainers(trainer_id, trainer_name)
+INSERT INTO trainers(trainer_name)
 VALUES  ('Ash'), 
         ('Brock'), 
         ('Kelly'), 

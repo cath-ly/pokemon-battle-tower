@@ -1,4 +1,4 @@
-INSERT INTO trainer_battles (trainer_1, trainer_2, winner, battle_date);
+INSERT INTO trainer_battles (trainer_1, trainer_2, winner, battle_date)
 VALUES  ('Ash', 'Brock', 'Ash', '10-01-2021'), 
         ('Kelly', 'Chantakrak', 'Chantakrak', '10-02-2021'), 
         ('Ash', 'Eli', 'Ash', '10-03-2021'), 
