@@ -1,2 +1,2 @@
-SELECT * FROM trainer_battles;
-
+SELECT * FROM trainer_battles
+ORDER BY battle_date DESC;
