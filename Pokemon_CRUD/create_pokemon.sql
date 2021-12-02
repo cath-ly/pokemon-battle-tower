@@ -6,6 +6,6 @@ CREATE TABLE pokemon (
     mega BOOLEAN,
     poke_level INT(3),
     PRIMARY KEY (poke_id),
-    poke_species VARCHAR(11),
-    FOREIGN KEY (poke_species) REFERENCES species(species_name)
+    species_name VARCHAR(11),
+    FOREIGN KEY (species_name) REFERENCES species(species_name)
 );
