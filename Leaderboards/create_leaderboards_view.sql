@@ -2,7 +2,7 @@
  
 -- find most recent loss
 DELIMITER //
-DROP FUNCTION IF EXISTS (most_recent_loss);
+DROP FUNCTION IF EXISTS most_recent_loss;
 
 CREATE FUNCTION most_recent_loss(trainer_name VARCHAR)
 RETURNS DATE
@@ -13,7 +13,7 @@ RETURN (
 //
 
 -- count wins until most recent loss
-DROP FUNCTION IF EXISTS (count_wins);
+DROP FUNCTION IF EXISTS count_wins;
 
 CREATE FUNCTION count_wins(trainer_name VARCHAR, most_recent_loss DATE)
 RETURNS INT 
@@ -25,7 +25,7 @@ RETURN (
 //
 
 -- count number of awards for a given trainer
-DROP FUNCTION IF EXISTS (count_awards);
+DROP FUNCTION IF EXISTS count_awards;
 
 CREATE FUNCTION count_awards(trainer_id) 
 RETURNS INT
