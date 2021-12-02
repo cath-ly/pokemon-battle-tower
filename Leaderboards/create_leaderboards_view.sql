@@ -7,7 +7,7 @@ RETURNS DATE
 RETURN (
     SELECT battle_date FROM trainer_battles 
     ON trainer_id = trainer_1 OR trainer_id = trainer_2 
-    WHERE trainer_id != winner;
+    WHERE trainer_id != winner
 );
 //
 
@@ -17,7 +17,7 @@ RETURNS INT
 RETURN (
     -- how do i stop it from counting past their most recent loss? 
     SELECT COUNT(winner) AS winstreak FROM trainer_battles
-    WHERE trainer_id = trainer_1 OR trainer_id = trainer_2 AND trainer_id = Winner AND battle_date > most_recent_loss;
+    WHERE trainer_id = trainer_1 OR trainer_id = trainer_2 AND trainer_id = Winner AND battle_date > most_recent_loss
 );
 //
 
@@ -25,7 +25,7 @@ RETURN (
 CREATE FUNCTION count_awards(trainer_id) 
 RETURNS INT
 RETURN (
-    SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards;
+    SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards
 );
 //
 
