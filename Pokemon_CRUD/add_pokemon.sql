@@ -1,4 +1,4 @@
-INSERT INTO pokemon (poke_name, poke_trait, poke_found, mega, poke_level, poke_species)
+INSERT INTO pokemon (poke_name, poke_trait, poke_found, mega, poke_level, species_name)
 VALUES  ('Pikachu', 'Brave', 'Bushes', 1, '10', 'Pikachu'), 
         ('Squirtle', 'Quirky', 'Bushes', 1, '7', 'Squirtle'), 
         ('Charmander', 'Snappy', 'Bushes', 1, '11', 'Charmander'), 
