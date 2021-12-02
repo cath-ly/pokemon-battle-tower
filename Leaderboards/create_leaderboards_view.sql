@@ -8,8 +8,7 @@ CREATE FUNCTION most_recent_loss(trainer_name VARCHAR)
 RETURNS DATE
 RETURN (
     SELECT battle_date FROM trainer_battles 
-    ON trainer_name = trainer_1 OR trainer_name = trainer_2 
-    WHERE trainer_name != winner
+    WHERE (trainer_name = trainer_1 OR trainer_name = trainer_2) AND trainer_name != winner
 );
 //
 
