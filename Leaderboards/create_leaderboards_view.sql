@@ -29,11 +29,6 @@ RETURN (
 );
 //
 
-
-CALL most_recent_loss(trainer_name);
-CALL count_wins(trainer_name, most_recent_loss);
-CALL count_awards(trainer_id);
-
 -- create view/do i add this into the query for the viewLeaderboards.php?
 CREATE VIEW [leaderboard] AS 
 SELECT trainer_name, count_wins(trainer_name) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
