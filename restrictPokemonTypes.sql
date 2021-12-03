@@ -9,9 +9,10 @@ RETURN(
     SELECT COUNT(s_name) FROM species_type
     WHERE species_name = s_name
 );
-
+DELIMITER //
 CREATE OR REPLACE TRIGGER restrictPokeType
 BEFORE INSERT ON species_type FOR EACH ROW
 IF (count_poketype(species_name)) > 2 THEN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Unable to add pokemon, maximum party size reached.";
-;
+END IF;
+//
