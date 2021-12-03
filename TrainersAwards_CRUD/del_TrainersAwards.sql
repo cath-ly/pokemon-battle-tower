@@ -1,1 +1,1 @@
-DELETE * FROM TrainersAwards;
+DELETE * FROM trainer_awards;

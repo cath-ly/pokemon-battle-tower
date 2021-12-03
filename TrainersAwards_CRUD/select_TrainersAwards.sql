@@ -1,1 +1,1 @@
-SELECT * FROM TrainersAwards;
+SELECT * FROM trainer_awards;
