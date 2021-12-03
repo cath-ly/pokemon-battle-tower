@@ -36,7 +36,7 @@ RETURN (
 
 -- create view/do i add this into the query for the viewLeaderboards.php?
 CREATE VIEW leaderboard AS
-SELECT trainer_id, count_wins(trainer_id) AS winstreak, count_awards(trainer_id) AS number_of_awards
+SELECT trainer_id, count_wins(trainer_id, most_recent_loss(trainer_id)) AS winstreak, count_awards(trainer_id) AS number_of_awards
 FROM trainers
 ORDER BY winstreak DESC, number_of_awards DESC;
 
