@@ -5,7 +5,11 @@ CREATE TABLE trainer_battles(
     trainer_2 VARCHAR (30), 
     winner VARCHAR (30),
     battle_date DATE,
-    FOREIGN KEY (trainer_1) REFERENCES trainers(trainer_name),
-    FOREIGN KEY (trainer_2) REFERENCES trainers(trainer_name), 
-    FOREIGN KEY (winner) REFERENCES trainers(trainer_name)
+    FOREIGN KEY (trainer_1) REFERENCES trainers(trainer_id),
+    FOREIGN KEY (trainer_2) REFERENCES trainers(trainer_id), 
+    FOREIGN KEY (winner) REFERENCES trainers(trainer_id)
 );
+
+ --FOREIGN KEY (trainer_2) REFERENCES trainers(trainer_id), 
+--    FOREIGN KEY (trainer_2) REFERENCES trainers(trainer_id), 
+--     FOREIGN KEY (winner) REFERENCES trainers(trainer_id)
