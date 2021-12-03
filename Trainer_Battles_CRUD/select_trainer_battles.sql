@@ -1,5 +1,5 @@
 -- try this out and see how it fairs
-SELECT winner, trainer_name, battle_date FROM trainer_battles
+SELECT trainer_1, trainer_2, winner, trainer_name, battle_date FROM trainer_battles
     INNER JOIN trainers
     ON (trainer_battles.winner = trainers.trainer_id)
 -- GROUP BY trainer_name
