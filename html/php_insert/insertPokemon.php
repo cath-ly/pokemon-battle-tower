@@ -25,20 +25,20 @@
     }
     //pokemove insertion statement
     
-    $ins_stmt = $conn->prepare("INSERT INTO pokemon (poke_name, poke_trait, poke_found, mega, poke_level, poke_species)
+    $ins_stmt = $conn->prepare("INSERT INTO pokemon (species_name, poke_name, poke_trait, poke_found, mega, poke_level)
     VALUES ((?), (?), (?), (?), (?), (?));"); 
-    $ins_stmt->bind_param('ssssis', $name, $trait, $found, $mega, $lvl, $species);
+    $ins_stmt->bind_param('sssssi', $species, $name, $trait, $found, $mega, $lvl);
     ?>
 
     <p>Enter the Fields to Insert into Pokemon's Move:
     <!-- Using default action (this page). -->
         <form method=POST>
-            <input type=text name=name placeholder='Enter Trainer ID...'/>
-            <input type=text name=trait placeholder='Enter Award Name...'/>
+            <input type=text name=species placeholder='Enter Species...'/>
+            <input type=text name=name placeholder='Enter Pokemon Name...'/>
+            <input type=text name=trait placeholder='Enter Poke Trait...'/>
             <input type=text name=found placeholder='Where was it found...'/>
             <input type=text name=mega placeholder='Is it Mega?...'/>
             <input type=text name=lvl placeholder='Enter Pokemon LVL...'/>
-            <input type=text name=species placeholder='Enter Species...'/>
             <input type=submit name=submit value='Submit'/>
         </form>
     </p>
