@@ -6,8 +6,8 @@
     error_reporting(E_ALL);
 
     // Connect to DB
-    // $config = parse_ini_file('/home/Takrak/mysql.ini');
-    $config = parse_ini_file('/home/jeligooch/mysql.ini');
+    $config = parse_ini_file('/home/Takrak/mysql.ini');
+    //$config = parse_ini_file('/home/jeligooch/mysql.ini');
     // whatever our pokemon name is
     $dbname = 'battle_towers_pers';
 
