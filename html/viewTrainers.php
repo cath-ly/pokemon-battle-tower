@@ -31,10 +31,10 @@
     }
 
     $rows = $result->fetch_all();
-    $spec_row = $result->num_rows;
-    $result = $conn->query($query);
+    $tot_row = $result->num_rows;
+    $tot_col = $result->field_count;
+    
     ?>
-    <form action="viewTrainers.php" method=POST>
     <p>
         <table>
             <thead>
@@ -43,8 +43,15 @@
                 <?php while ($field = $result->fetch_field()){ ?>
                     <td> <?php echo $field->name; ?> </td>
                 <?php } ?>
-            </tr>
+                </tr>
             </thead>
+            <?php for($x = 0; $x < $tot_row; $x++) { ?>
+                <tr>
+                <?php for($y = 0; $y < $tot_col; $y++){ ?>
+                    <td> <?php echo $rows[$x][$y]; ?> </td>
+                <?php } ?>
+                </tr>
+            <?php } ?>
         </table>
         </form>
     </p>

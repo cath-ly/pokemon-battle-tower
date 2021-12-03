@@ -21,28 +21,38 @@
         exit;
     }
 
-    //tbl view query
+    //tbl query
 
-    $query = "SELECT * FROM Trainers_Pokemon;";
+    $query = "SELECT trainer_name, poke_name FROM trainers_pokemon
+                INNER JOIN trainers USING (trainer_id)
+                INNER JOIN pokemon USING (poke_id);";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
     }
 
     $rows = $result->fetch_all();
-    $spec_row = $result->num_rows;
+    $tot_row = $result->num_rows;
+    $tot_col = $result->field_count;
+    
     ?>
-    <form action="viewTrainersPokemon.php" method=POST>
     <p>
         <table>
             <thead>
+            <th>List of Trainers Pokemon</th>
             <tr>
-                <th> "Trainers Pokemon"</th>
-                <?php while ($field = $result->fetch_field()){?>
-                    <td><?php echo $field->name; ?> </td>
+                <?php while ($field = $result->fetch_field()){ ?>
+                    <td> <?php echo $field->name; ?> </td>
                 <?php } ?>
-            </tr>
+                </tr>
             </thead>
+            <?php for($x = 0; $x < $tot_row; $x++) { ?>
+                <tr>
+                <?php for($y = 0; $y < $tot_col; $y++){ ?>
+                    <td> <?php echo $rows[$x][$y]; ?> </td>
+                <?php } ?>
+                </tr>
+            <?php } ?>
         </table>
         </form>
     </p>

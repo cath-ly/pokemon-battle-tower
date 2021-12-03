@@ -3,9 +3,10 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    /*need to connect to DB*/ 
-    $config = parse_ini_file('/home/Takrak/mysqli.ini');
-    $dbname = 'temp';
+   // Connect to DB
+   $config = parse_ini_file('/home/Takrak/mysql.ini');
+   // whatever our pokemon name is BattleTowers
+   $dbname = 'battle_towers_pers';
 
     /*config shit*/
     $conn = new mysqli(
@@ -30,22 +31,29 @@
     }
 
     $rows = $result->fetch_all();
-    $spec_row = $result->num_rows;
+    $tot_row = $result->num_rows;
+    $tot_col = $result->field_count;
+    
     ?>
-    <form action="viewLeaderboard.php" method=POST>
     <p>
         <table>
             <thead>
+            <th>LEADERBOARDS</th>
             <tr>
-                <th> "Leaderboards"</th>
-                <?php while ($field = $result->fetch_field()){?>
-                    <td><?php echo $field->name; ?> </td>
+                <?php while ($field = $result->fetch_field()){ ?>
+                    <td> <?php echo $field->name; ?> </td>
                 <?php } ?>
-            </tr>
+                </tr>
             </thead>
+            <?php for($x = 0; $x < $tot_row; $x++) { ?>
+                <tr>
+                <?php for($y = 0; $y < $tot_col; $y++){ ?>
+                    <td> <?php echo $rows[$x][$y]; ?> </td>
+                <?php } ?>
+                </tr>
+            <?php } ?>
         </table>
         </form>
     </p>
-
 
 
