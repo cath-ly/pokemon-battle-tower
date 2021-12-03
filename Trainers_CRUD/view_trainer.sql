@@ -1,1 +1,2 @@
--- view_trainer.sql --
+CREATE VIEW Trainers AS
+    SELECT trainer_name FROM trainers;
