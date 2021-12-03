@@ -7,7 +7,7 @@ VALUES  ('Pikachu', 'Brave', 'Bushes', 'TRUE', 10, 'Pikachu'),
         ('Pikachu', 'Brave', 'Bushes', 'TRUE', 7, 'Pikachu'), 
         ('Squirtle', 'Quirky', 'Bushes', 'TRUE', 9, 'Squirtle'), 
         ('Charmander', 'Snappy', 'Bushes', 'TRUE', 11, 'Charmander'), 
-        ('Bulbasaur', 'Brave', 'Bushes', 'TRUE' 10, 'Bulbasaur'), 
+        ('Bulbasaur', 'Brave', 'Bushes', 'TRUE', 10, 'Bulbasaur'), 
         ('Meowth', 'Quirky', 'Rocket', 'FALSE', 11, 'Meowth'), 
         ('Pikachu', 'Brave', 'Bushes', 'TRUE', 10, 'Pikachu'), 
         ('Squirtle', 'Quirky', 'Bushes', 'TRUE', 7, 'Squirtle');
