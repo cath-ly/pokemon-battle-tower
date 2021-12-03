@@ -15,7 +15,7 @@ SOURCE speciestype_CRUD/crud_speciestype.sql;
 SOURCE Trainers_CRUD/crud_trainer.sql;
 SOURCE Pokemon_CRUD/crud_pokemon.sql;
 SOURCE PokeMove_CRUD/crud_pokemove.sql;
-SOURCE Trainer_Battles_CRUD/crud_trainer_battles.sql;
 SOURCE Trainers_Pokemon/crud_trainers_pokemon.sql;
+SOURCE Trainer_Battles_CRUD/crud_trainer_battles.sql;
 SOURCE TrainersAwards_CRUD/crud_TrainersAwards.sql;
 SOURCE Leaderboards/create_leaderboards_view.sql;
