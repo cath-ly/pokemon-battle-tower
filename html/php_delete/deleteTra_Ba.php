@@ -1,6 +1,3 @@
-<head>
-        <link rel="stylesheet" href="/home/jeligooch/csc362-proj-npc/html/NPCstyle.css" type="text/css">
-</head>
 <?php
     ///require 'format_result.php';
     // Show ALL PHP's errors.
@@ -26,7 +23,10 @@
         exit;
     }
     //poke_move table
-    $query = "SELECT * FROM trainers;";
+    $query = "SELECT battle_id, trainer_1, trainer_2, winner, trainer_name, battle_date FROM trainer_battles
+                INNER JOIN trainers
+                ON (trainer_battles.winner = trainers.trainer_id)
+                ORDER BY battle_date DESC;";
     $result = $conn->query($query);
     if(!$result){
         echo "query failed";
@@ -35,14 +35,13 @@
     $rows = $result->fetch_all();
     $tot_row = $result->num_rows;
     //CPK poke_move: poke_id & move_name
-    $del_stmt = $conn->prepare("DELETE FROM trainers WHERE trainer_id = ? AND trainer_name = ?;"); 
-    $del_stmt->bind_param('is', $id, $name);
+    $del_stmt = $conn->prepare("DELETE FROM trainer_battles WHERE battle_id = ?;"); 
+    $del_stmt->bind_param('i', $id);
     
     //checking if we deleted anything it will use header!
     $delete = false;
     for($i=0; $i<$tot_row; $i++){
         $id = $rows[$i][0];
-        $name = $rows[$i][1];
         //checks to see whether the checkbox is checked if so we will delete
         if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
             echo $conn->error;
@@ -70,7 +69,7 @@
         <?php echo $tot_col; ?> <br> -->
         <p>
         <!-- Creates a form to delete instruments -->
-        <form action="deleteTrainers.php" method=POST>
+        <form action="deleteTra_Ba.php" method=POST>
         <table>
             <thead>
             <tr>
@@ -83,7 +82,6 @@
             </thead>
             <?php for($x = 0; $x < $tot_row; $x++) { 
                     $id = $rows[$x][0];
-                    $name = $rows[$x][1];
                     //echo $id . '<br>';
                 // next establishes the checkbox button to toggle what instruments to delete
                 ?>
