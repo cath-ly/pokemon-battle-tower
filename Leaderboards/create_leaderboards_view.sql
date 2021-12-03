@@ -27,7 +27,7 @@ RETURN (
 -- count number of awards for a given trainer
 --DROP FUNCTION IF EXISTS count_awards;
 
-CREATE FUNCTION count_awards(trainer_id) 
+CREATE FUNCTION count_awards(trainer_id INT) 
 RETURNS INT
 RETURN (
     SELECT COUNT(trainer_id) AS number_of_awards FROM trainer_awards
