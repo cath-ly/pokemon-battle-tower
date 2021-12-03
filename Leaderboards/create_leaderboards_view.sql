@@ -4,23 +4,23 @@
 DELIMITER //
 DROP FUNCTION IF EXISTS most_recent_loss;
 
-CREATE FUNCTION most_recent_loss(trainer_name VARCHAR)
+CREATE FUNCTION most_recent_loss(trainer_id INT)
 RETURNS DATE
 RETURN (
     SELECT battle_date FROM trainer_battles 
-    WHERE (trainer_name = trainer_1 OR trainer_name = trainer_2) AND trainer_name != winner
+    WHERE (trainer_id = trainer_1 OR trainer_id = trainer_2) AND trainer_id != winner
 );
 //
 
 -- count wins until most recent loss
 DROP FUNCTION IF EXISTS count_wins;
 
-CREATE FUNCTION count_wins(trainer_name VARCHAR, most_recent_loss DATE)
+CREATE FUNCTION count_wins(trainer_id INT, most_recent_loss DATE)
 RETURNS INT 
 RETURN (
     -- how do i stop it from counting past their most recent loss? 
     SELECT COUNT(winner) AS winstreak FROM trainer_battles
-    WHERE trainer_name = trainer_1 OR trainer_name = trainer_2 AND trainer_name = winner AND battle_date > most_recent_loss
+    WHERE trainer_id = trainer_1 OR trainer_id = trainer_2 AND trainer_id = winner AND battle_date > most_recent_loss
 );
 //
 
@@ -36,7 +36,7 @@ RETURN (
 
 -- create view/do i add this into the query for the viewLeaderboards.php?
 CREATE VIEW leaderboard AS 
-SELECT trainer_name, count_wins(trainer_name) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
+SELECT trainer_id, count_wins(trainer_id) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
 FROM trainers
 ORDER BY winstreak DESC, number_of_awards DESC;
 
