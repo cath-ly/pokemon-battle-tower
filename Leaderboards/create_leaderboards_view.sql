@@ -35,7 +35,7 @@ RETURN (
 //
 
 -- create view/do i add this into the query for the viewLeaderboards.php?
-CREATE VIEW leaderboard AS 
+CREATE VIEW leaderboard  
 SELECT trainer_id, count_wins(trainer_id) AS winstreak, count_awards(trainer_id) AS number_of_awards--calc ranking in php
 FROM trainers
 ORDER BY winstreak DESC, number_of_awards DESC;
