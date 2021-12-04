@@ -11,7 +11,7 @@ RETURN(
 DELIMITER //
 CREATE OR REPLACE TRIGGER restrictMoveType
 BEFORE INSERT ON movelist FOR EACH ROW
-IF (count_movetype(m_id)) > 1 THEN
+IF (count_movetype(m_id)) = 1 THEN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'cant have more than 1 type for a given move';
 END IF;
 //
