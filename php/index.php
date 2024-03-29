@@ -20,10 +20,10 @@
         <br>
 
         <ul style="font-size: 1.875em">
-            <li><a class="active" href="viewTrainersPoke.php">Pokemon</a></li>
-            <li><a href="viewTrainers.php">Trainers</a></li>
-            <li><a href="insert.html">Insertion Tables</a></li>
-            <li><a href="delete.html">Deletion Tables</a></li>
+            <li><a class="active" href="./php_view/viewTrainersPoke.php">Pokemon</a></li>
+            <li><a href="./php_view/viewTrainers.php">Trainers</a></li>
+            <li><a href="../html/insert.html">Insertion Tables</a></li>
+            <li><a href="../html/delete.html">Deletion Tables</a></li>
         </ul>
 
         <h1>
