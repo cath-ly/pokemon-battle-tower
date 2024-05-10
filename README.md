@@ -12,7 +12,7 @@ application and design the structure of the Leaderboard system.
 Within this project, we were tasked with creating a battle tournament leaderboard that monitors
 the longest win streak and then placed trainers based on who met that criteria. With that, I had
 to create the schemas and field specifications for each table accounting for scalability when this
-application reaches popularity in the Kanto region. Refer to [this image](BattleTowers-Hierarchy-Structure.PNG) for the final design
+application reaches popularity in the Kanto region. Refer to [this image](BattleTowers-Hierarchy-Structure.PNG) for the final design.
 
 ## Challenges
 
@@ -34,4 +34,4 @@ solely what was my responsibility.
 
 I learned that having an RDBMS really makes things more organized and more readily accessible in mapping out how the data entries flow through
 the system. Compared to a NoSQL language which solidifies unknown data appearing and being parsed, SQL helps encourage proper hierarchal structure
-and clean database system.
+and a clean database system.
